@@ -25,26 +25,14 @@
   left: 0;
   right: 0;
   position: absolute;
-  overflow-y: hidden;
 }
 body {
-  overflow: hidden;
   font-family: "Lato";
 }
 // .scroll-horizontal {
 //   // padding-left: 290px;
 // }
-.Row {
-  top: 0;
-  bottom: 0;
-  left: 0px;
-  right: 0px;
-  position: absolute;
-  overflow: hidden;
-}
-.Card:first-child{
-  padding-left: 15rem;
-}
+
 .Card {
   // height: 100%; /* Keep the same ratio 535:315 */
   // width: 515px; /* Keep the same ratio 535:315 */
@@ -63,6 +51,14 @@ body {
 /* .Card:hover {
   transform: scale(0.99);
 } */
+
+.Row {
+  top: 0;
+  bottom: 0;
+  left: 0px;
+  right: 0px;
+  position: absolute;
+}
 
 .App {
   font-family: sans-serif;
@@ -98,6 +94,41 @@ body {
           color: #000;
         }
       }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+  }
+  body,
+  .scroll-horizontal,
+  .Row,
+  .Container {
+    overflow: hidden;
+  }
+
+  .Card:first-child {
+    padding-left: 15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: none;
+  }
+  .scroll-horizontal {
+    overflow: auto !important;
+    position:  relative !important;
+    & > div {
+      transform: none !important;
+      display: flex;
+      position:  relative !important;
+      flex-direction: column;
+    }
+    .Card{
+      width: 100%;
+      margin: 0;
     }
   }
 }
