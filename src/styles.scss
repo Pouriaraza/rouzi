@@ -85,14 +85,13 @@ body {
     }
     .header-items-container nav ul {
       padding-left: 0;
-
-      li {
+      display: flex;
+      flex-direction: column;
+      a {
         list-style: none;
         padding: 0.6rem;
-        a {
-          text-decoration: none;
-          color: #000;
-        }
+        text-decoration: none;
+        color: #000;
       }
     }
   }
@@ -114,21 +113,93 @@ body {
 }
 
 @media (max-width: 768px) {
+  .Row {
+    position: relative;
+  }
+  .Container {
+    overflow-x: hidden;
+  }
   .header {
-    display: none;
+    height: auto;
+    width: 100%;
+    position: relative;
+    padding: 0;
+    .menu-outer {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .header-logo-container {
+        width: 100%;
+        img {
+          width: 30%;
+          margin: auto;
+        }
+      }
+      .header-items-container {
+        position: absolute;
+        background-color: white;
+        height: 100vh;
+        padding: 1rem;
+        right: -20rem;
+        transition: all 0.3s;
+        padding-right: 9rem;
+      }
+      .now-mobile {
+        position: absolute;
+        background-color: white;
+        height: 100vh;
+        padding: 1rem;
+        right: 0;
+        transition: all 0.3s;
+        padding-right: 9rem;
+        nav ul {
+          padding-left: 0;
+          display: flex;
+          flex-direction: column;
+          a {
+            list-style: none;
+            padding: 0.6rem;
+            text-decoration: none;
+            color: #000;
+          }
+        }
+      }
+    }
   }
   .scroll-horizontal {
     overflow: auto !important;
-    position:  relative !important;
+    position: relative !important;
     & > div {
       transform: none !important;
       display: flex;
-      position:  relative !important;
+      position: relative !important;
       flex-direction: column;
     }
-    .Card{
+    .Card {
       width: 100%;
       margin: 0;
     }
   }
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  height: 100vh;
+  width: auto;
+  padding: 20px 40px;
+  left: 0px;
+
+  // position: relative;
+  // display: flex;
+  // align-items: center;
+  // height: 60px;
+  // width: 100%;
+  // padding: 0.5rem 0rem;
+  // background-color: #fff;
+  // color: black;
+  // box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
 }
