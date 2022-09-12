@@ -97,7 +97,29 @@ body {
   }
 }
 
+.mobile-menu {
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+  background: url(./images/menu.png) center center no-repeat;
+  width: 90px;
+  background-size: 4rem;
+}
+.menuu-outer {
+  font-size: 0;
+  border: none;
+  background-color: transparent;
+  background: url(./images/close.png) center center no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: 4rem;
+}
+
 @media (min-width: 768px) {
+  .mobile-menu,
+  .menuu-outer {
+    display: none;
+  }
   .header {
   }
   body,
@@ -138,7 +160,7 @@ body {
         }
       }
       .header-items-container {
-        position: absolute;
+        position: fixed;
         background-color: white;
         height: 100vh;
         padding: 1rem;
@@ -147,7 +169,7 @@ body {
         padding-right: 9rem;
       }
       .now-mobile {
-        position: absolute;
+        position: fixed;
         background-color: white;
         height: 100vh;
         padding: 1rem;

@@ -6,15 +6,13 @@ const Navbar = () => {
     return (
         <nav className="header">
             <div className="menu-outer">
-                <button className="mobile-menu"
-                    onClick={() => setIsMobile(!isMobile)}> ok </button>
                 <div className="header-logo-container">
                     <img src={Logo} />
                 </div>
                 <div className={isMobile ? "now-mobile" : "header-items-container"}
                     onClick={() => setIsMobile(false)} >
                     <nav>
-                        <button className="mobile-menu"
+                        <button className="menuu-outer"
                             onClick={() => setIsMobile(!isMobile)}> ok </button>
                         <ul>
                             <Link to="/Food">Food</Link>
@@ -24,6 +22,8 @@ const Navbar = () => {
                         </ul>
                     </nav>
                 </div>
+                <button className="mobile-menu"
+                    onClick={() => setIsMobile(!isMobile)}> ok </button>
             </div>
         </nav>
 
